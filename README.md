@@ -2,7 +2,7 @@
 
 [algorithms](https://github.com/wurikiji/algorithms)에 등장하는
 알고리즘에 대한 시뮬레이터를 작성하는 공간 입니다. 작성된 사이트는
-정적 빌드한 이유 [gh-pages](https://github.com/wurikiji/alrotihms/tree/gh-pages)
+정적 빌드한 이유 [gh-pages](https://github.com/wurikiji/algorithms/tree/gh-pages)
 로 배포됩니다. 사이트 확인은 https://wurikiji.github.io/algorithms 에서 
 확인할 수 있습니다. 
 
