@@ -1,7 +1,10 @@
 <div class="insertion-sort">
   <template ngFor let-elm [ngForOf]="elements" let-idx="index">
     <span [ngClass]="{target: idx == progressIdx, sorted: idx <= targetIdx}">
-      {{elm.data}}
+      {{elm.data}}.
     </span>
   </template>
+  <button (click)="restart()">
+    다시 시작하기
+  </button>
 </div>

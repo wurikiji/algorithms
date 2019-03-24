@@ -15,8 +15,9 @@ const List<String> data = [
 class InsertionSort implements OnInit{
   int targetIdx = 1;
   int progressIdx = 1;
-  Duration delay = Duration(milliseconds: 300);
+  Duration delay = Duration(milliseconds: 400);
   List<SingleElement> elements;
+  Timer timer;
 
   @override
   void ngOnInit() {
@@ -29,9 +30,14 @@ class InsertionSort implements OnInit{
     );
     start();
   }
-
+  void restart() {
+    targetIdx = 1;
+    progressIdx = 1;
+    timer.cancel();
+    start();
+  }
   Future<Null> start() async {
-    Timer.periodic(delay, takeOneStep);
+    timer = Timer.periodic(delay, takeOneStep);
   }
 
   void takeOneStep(Timer timer) {
