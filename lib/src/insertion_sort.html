@@ -1,6 +1,7 @@
 <div class="insertion-sort">
   <template ngFor let-elm [ngForOf]="elements" let-idx="index">
-    <span [ngClass]="{target: idx == progressIdx, sorted: idx <= targetIdx}">
+    <span [class.target] = 'idx == progressIdx'
+          [class.sorted] = 'idx <= targetIdx'>
       {{elm.data}}.
     </span>
   </template>

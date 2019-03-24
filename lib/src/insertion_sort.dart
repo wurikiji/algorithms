@@ -13,27 +13,31 @@ const List<String> data = [
   directives: [coreDirectives],
 )
 class InsertionSort implements OnInit{
-  int targetIdx = 1;
-  int progressIdx = 1;
+  int targetIdx;
+  int progressIdx;
   Duration delay = Duration(milliseconds: 400);
   List<SingleElement> elements;
   Timer timer;
 
   @override
   void ngOnInit() {
+    initTargetElms();
+    start();
+  }
+  void initTargetElms() {
     // screen 에 사용할 데이터 리스트 생성
     elements = List<SingleElement>.generate(
       data.length,
-      (int idx) {
+          (int idx) {
         return SingleElement(data[idx]);
       },
     );
-    start();
-  }
-  void restart() {
     targetIdx = 1;
     progressIdx = 1;
+  }
+  void restart() {
     timer.cancel();
+    initTargetElms();
     start();
   }
   Future<Null> start() async {
